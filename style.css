@@ -36,28 +36,42 @@ ul a:hover {
 
 #img-inicio{
     border-radius: 50%;
-    border-style:solid;
-    border-color:rgb(0, 11, 98)   ;
+    border-style:ridge;
+    border-color:rgb(0, 11, 98);
+    border-width: 5px;
+    margin-left: 250px;
 }
 #inicio{
     background-image: url("/img/wallpaper-inicio.jpg");
     font-family: Comic Sans MS;
     color: rgb(255, 255, 255);
     display: flex;
-    gap: 25%;
+    gap: 5%;
     justify-content: center;
     align-items: center;
 }
+#inicio h1, h2, h3, h4{
+    color: blue;
+    font-family: 'Gill Sans';
+    text-shadow: 2px 6px 2px #000000;
+    text-align: left;
+}
+#inicio h1{
+    font-size: 40px;
+}
 #btn-inicio{ 
-    padding: 20px;
-    margin: 20px;
+    padding: 15px;
     background-color: rgb(0, 26, 255);
     color: white;
     font-family: Comic Sans MS;
-    border-radius: 20%;
-    text-align: center;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 20px;
 }
-
+#inicio button:hover{
+    background-color: white;
+    color: rgb(0, 26, 255);
+}
 #sobre-mi{
     font-family: Comic Sans MS;
     color: rgb(255, 255, 255);
@@ -67,6 +81,15 @@ ul a:hover {
     padding-right: 15%;
     padding-left: 15%;
     gap: 10%;
+    align-items: center;
+}
+#sobre-mi article{
+    border-style: solid;
+    border-color: rgb(0, 11, 28);
+    border-width: 1px;
+    border-radius: 20%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 35px;
 }
 #inf-sobre-mi h1{
     color:blue;
@@ -74,6 +97,24 @@ ul a:hover {
     font-family:'Gill Sans';
     text-shadow: 2px 6px 2px #000000;
 }
+#img-sobre-mi-carrusel1{
+    border-style: solid;
+    border-radius: 15%;
+    border-color: rgba(0, 0, 255, 0.50);
+    border-top-left-radius: 75%;
+}
+#img-sobre-mi-carrusel2{
+    border-style: solid;
+    border-radius: 15%;
+    border-color: rgba(0, 0, 255, 0.50);
+}
+#img-sobre-mi-carrusel3{
+    border-style: solid;
+    border-radius: 15%;
+    border-color: rgba(0, 0, 255, 0.50);
+    border-bottom-right-radius: 75%;
+}
+
 #contactos{
     background-image: url("/img/wallpaper-inicio.jpg");
     font-family: Comic Sans MS;
@@ -96,3 +137,96 @@ ul a:hover {
         font-family:'Gill Sans';
         text-shadow: 2px 6px 2px #000000;
     }
+#contactos div article {
+    display: grid;
+    gap: 15px;
+    justify-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid rgb(0, 11, 98);
+    margin: 20px;
+}
+
+#contactos button {
+    padding: 15px;
+    background-color: rgb(0, 26, 255);
+    color: white;
+    font-family: Comic Sans MS;
+    border-radius: 10px;
+    border: none;
+}
+
+#contactos button:hover {
+    background-color: white;
+    color: rgb(0, 26, 255);
+}
+#trabajos{
+    background-image: url("/img/wallpaper2.png");
+    font-family: Comic Sans MS;
+    color: rgb(255, 255, 255);
+    padding: 40px;
+    text-align: center;
+}
+#trabajos h1{
+    color:blue;
+    text-align: center;
+    font-family:'Gill Sans';
+    text-shadow: 2px 6px 2px #000000;
+}
+#titulo{
+    p{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    }
+}
+#proyectos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    justify-items: center;
+}
+
+#trabajos article{
+    display: grid;
+    gap: 15px;
+    justify-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid rgb(0, 11, 98);
+}
+
+#trabajos img{
+    border-radius: 10px;
+    border: solid 2px rgb(0, 11, 98);
+}
+
+#trabajos button{
+    padding: 15px;
+    background-color: rgb(0, 26, 255);
+    color: white;
+    font-family: Comic Sans MS;
+    border-radius: 10px;
+    border: none;
+}
+
+#trabajos button:hover{
+    background-color: white;
+    color: rgb(0, 26, 255);
+}
+
+hr {
+    border: none;           
+    height: 5px;      
+    background-color: rgb(0, 11, 98);
+    margin:40px;
+    width: 0%;      
+    border-radius: 10px;
+}
+
+#proyectos h3{
+    color: rgb(255, 255, 255);
+    font-family: Comic Sans MS;
+    text-shadow: none;
+}
