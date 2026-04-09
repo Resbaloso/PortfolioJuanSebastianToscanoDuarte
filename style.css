@@ -17,7 +17,7 @@ ul {
     display: flex;
     list-style: none;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
 }
 
 ul a {
@@ -25,13 +25,21 @@ ul a {
     color: rgb(255, 255, 255);
     font-family: Comic Sans MS;
     font-size: 30px;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    padding-top: 0px;
 }
 
 ul a:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 132, 255);
     padding: 0%;
+    transition: 0.3s;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    padding-top: 0px;
 }
 
 #img-inicio{
@@ -67,10 +75,13 @@ ul a:hover {
     border-radius: 10px;
     border: none;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 #inicio button:hover{
     background-color: white;
     color: rgb(0, 26, 255);
+    transform: scale(1.1);
+    transition: 0.3s;
 }
 #sobre-mi{
     font-family: Comic Sans MS;
@@ -98,19 +109,22 @@ ul a:hover {
     text-shadow: 2px 6px 2px #000000;
 }
 #img-sobre-mi-carrusel1{
-    border-style: solid;
+    border-style: ridge;
     border-radius: 15%;
+    border-width: 5px;
     border-color: rgba(0, 0, 255, 0.50);
     border-top-left-radius: 75%;
 }
 #img-sobre-mi-carrusel2{
-    border-style: solid;
+    border-style: ridge;
     border-radius: 15%;
+    border-width: 5px;
     border-color: rgba(0, 0, 255, 0.50);
 }
 #img-sobre-mi-carrusel3{
-    border-style: solid;
+    border-style: ridge;
     border-radius: 15%;
+    border-width: 5px;
     border-color: rgba(0, 0, 255, 0.50);
     border-bottom-right-radius: 75%;
 }
@@ -155,11 +169,14 @@ ul a:hover {
     font-family: Comic Sans MS;
     border-radius: 10px;
     border: none;
+    cursor: pointer;
 }
 
 #contactos button:hover {
     background-color: white;
     color: rgb(0, 26, 255);
+    transform: scale(1.1);
+    transition: 0.3s;
 }
 #trabajos{
     background-image: url("/img/wallpaper2.png");
@@ -209,11 +226,14 @@ ul a:hover {
     font-family: Comic Sans MS;
     border-radius: 10px;
     border: none;
+    cursor: pointer;
 }
 
 #trabajos button:hover{
     background-color: white;
     color: rgb(0, 26, 255);
+    transform: scale(1.1);
+    transition: 0.3s;
 }
 
 hr {
