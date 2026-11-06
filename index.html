@@ -4,333 +4,688 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Juan Sebastian Toscano Duarte | Junior Backend Developer</title>
 
     <meta name="description"
-        content="Portafolio profesional de Juan Sebastian Toscano Duarte - Junior Python Backend Developer">
+        content="Portafolio profesional de Juan Sebastian Toscano Duarte — Junior Backend Developer especializado en Java, Python y diseño de sistemas con arquitectura MVC.">
+
+    <meta property="og:title" content="Juan Sebastian Toscano Duarte | Junior Backend Developer">
+    <meta property="og:description" content="Backend Developer apasionado por construir sistemas limpios, escalables y bien documentados.">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/webp" href="./assets/icon/icon-whitey.webp">
 
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" type="image/png" href="./assets/icon/icon-whitey.webp"> 
 </head>
 
 <body>
 
-    <div class="background-container">
+    <!-- Barra de progreso de lectura -->
+    <div class="reading-progress" aria-hidden="true"></div>
+
+
+    <!-- ── FONDO ──────────────────────────────────────────── -->
+    <div class="background-container" aria-hidden="true">
         <div class="gradient-orb orb-1"></div>
         <div class="gradient-orb orb-2"></div>
         <div class="gradient-orb orb-3"></div>
+        <div class="orb-mouse"></div>
     </div>
 
+    <!-- ── HEADER / NAVBAR ───────────────────────────────── -->
     <header class="header">
-
-        <nav class="navbar">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
 
             <div class="navbar__brand">
                 <h1 class="navbar__logo">
-                    <img id="Bachyon" src="./assets/navbar/whiteyhimself.webp" alt="Logo Resbaloso" width="45px" height="45px">
+                    <img id="Bachyon"
+                         src="./assets/navbar/whiteyhimself.webp"
+                         alt="Logo Resbaloso"
+                         width="40"
+                         height="40">
                     Resbaloso
                 </h1>
             </div>
 
-            <div
-                class="hamburger"
-                id="menuToggle">
-
+            <button class="hamburger" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
+            </button>
 
-            </div>
-
-            <ul
-                class="navbar__menu"
-                id="navbarMenu">
-
-                <li>
-                    <a href="#hero">Inicio</a>
-                </li>
-
-                <li>
-                    <a href="#about">Trayectoria</a>
-                </li>
-
-                <li>
-                    <a href="#projects">Proyectos</a>
-                </li>
-
-                <li>
-                    <a href="#contact">Contacto</a>
-                </li>
-
+            <ul class="navbar__menu" id="navbarMenu" role="menubar">
+                <li role="none"><a href="#hero"     role="menuitem">Inicio</a></li>
+                <li role="none"><a href="#about"    role="menuitem">Trayectoria</a></li>
+                <li role="none"><a href="#skills"   role="menuitem">Habilidades</a></li>
+                <li role="none"><a href="#projects" role="menuitem">Proyectos</a></li>
+                <li role="none"><a href="#contact"  role="menuitem">Contacto</a></li>
             </ul>
 
         </nav>
-
     </header>
 
+    <!-- ── MAIN ──────────────────────────────────────────── -->
     <main class="main-content">
 
-        <section id="hero" class="hero section">
+        <!-- ══ SLOGAN ════════════════════════════════════════ -->
+        <section id="slogan" class="slogan-section" aria-label="Slogan personal">
+            <div class="slogan-section__inner">
+                <div class="slogan-section__line slogan-section__line--left" aria-hidden="true"></div>
+                <blockquote class="slogan-section__quote">
+                    <span class="slogan-section__mark" aria-hidden="true">"</span>
+                    <p class="slogan-section__text">
+                        Todo éxito es posible<br>
+                        <em>si se actúa con perseverancia</em>
+                    </p>
+                    <span class="slogan-section__mark slogan-section__mark--right" aria-hidden="true">"</span>
+                    <footer class="slogan-section__author">— Juan Sebastián Toscano Duarte</footer>
+                </blockquote>
+                <div class="slogan-section__line slogan-section__line--right" aria-hidden="true"></div>
+            </div>
+
+            <!-- Cinco Deluxe — especial con hover walking -->
+            <div class="whitey-char whitey-char--cinco whitey-char--special"
+                 data-idle="./assets/Whiteys/Cinco_Deluxe_Idle.webp"
+                 data-walking="./assets/Whiteys/Cinco_Deluxe_Walking.webp"
+                 aria-hidden="true">
+                <img src="./assets/Whiteys/Cinco_Deluxe_Idle.webp"
+                     alt=""
+                     class="whitey-char__img"
+                     draggable="false">
+                <div class="whitey-char__shadow"></div>
+            </div>
+
+        </section>
+
+        <!-- ══ HERO ══════════════════════════════════════════ -->
+        <section id="hero" class="hero section" aria-label="Presentación">
 
             <div class="hero__container">
 
+                <!-- Contenido -->
                 <div class="hero__content">
 
                     <span class="hero__badge">
-                        Junior Backend Developer
+                        <span class="hero__badge-text">Junior Backend Developer</span>
                     </span>
 
                     <h2 class="hero__title">
-                        Juan Sebastian Toscano Duarte
+                        Hola, soy
+                        <span class="hero__name-highlight">Juan Sebastián<br>Toscano Duarte</span>
                     </h2>
 
                     <p class="hero__description">
-                        Bachiller Técnico Empresarial Bilingüe y estudiante de
-                        Desarrollo de Software con sólidos conocimientos en
-                        Python, JavaScript, HTML, CSS y MySQL.
-                        Apasionado por la resolución de problemas,
-                        la arquitectura modular y la mejora continua.
+                        Bachiller Técnico Empresarial Bilingüe y estudiante de Desarrollo de Software
+                        en Campuslands. Construyo sistemas backend limpios y escalables con
+                        Java, Python y MySQL. Apasionado por la arquitectura MVC, los principios
+                        SOLID y la mejora continua.
                     </p>
 
                     <div class="hero__actions">
+                        <a class="glass-button glass-button--primary"
+                           href="./assets/cv/hoja-de-vida-juan-sebastian-toscano-duarte.pdf"
+                           download="CV_JuanSebastianToscano">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Descargar CV
+                        </a>
+                        <a class="glass-button"
+                           href="https://github.com/Resbaloso"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                            Ver GitHub
+                        </a>
+                    </div>
 
-                        <a class="glass-button" href="./assets/cv/hoja-de-vida-juan-sebastian-toscano-duarte.pdf" download="CV Backend Dev Juan Toscano">Descargar CV</a>
-                        <a class="glass-button" href="https://github.com/Resbaloso" target="_blank">Ver GitHub</a>
-                    
+                    <div class="hero__stats" aria-label="Estadísticas">
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">15+</div>
+                            <div class="hero__stat-label">Proyectos</div>
+                        </div>
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">B1</div>
+                            <div class="hero__stat-label">Cambridge PET</div>
+                        </div>
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">1+</div>
+                            <div class="hero__stat-label">Año aprendiendo</div>
+                        </div>
                     </div>
 
                 </div>
 
-                <div class="hero__image-container">
+                <!-- Imagen -->
+                <div class="hero__image-wrapper">
 
                     <div class="glass-card hero__image-card">
+                        <img src="./assets/profile/img-inicio.jpg"
+                             alt="Fotografía de Juan Sebastian Toscano Duarte"
+                             class="hero__image"
+                             id="profileImage"
+                             width="400"
+                             height="500">
+                    </div>
 
-                        <img
-                            src="./assets/profile/img-inicio.jpg"
-                            alt="Fotografía Juan Sebastian Toscano Duarte"
-                            class="hero__image"
-                            id="profileImage">
-
+                    <div class="hero__image-deco hero__image-deco--1">
+                        ☕ Java &amp; Python
                     </div>
 
                 </div>
 
             </div>
 
-        </section>
-
-        <section id="about" class="about section">
-
-            <div class="section-header">
-
-                <span class="section-subtitle">
-                    Sobre mí
-                </span>
-
-                <h2 class="section-title">
-                    Trayectoria Académica y Profesional
-                </h2>
-
+            <!-- Samco De Mayo — especial con hover walking -->
+            <div class="whitey-char whitey-char--samco whitey-char--special"
+                 data-idle="./assets/Whiteys/Samco_De_Mayo_Deluxe_Idle.webp"
+                 data-walking="./assets/Whiteys/Samco_De_Mayo_Deluxe_Walking.webp"
+                 aria-hidden="true">
+                <img src="./assets/Whiteys/Samco_De_Mayo_Deluxe_Idle.webp"
+                     alt=""
+                     class="whitey-char__img"
+                     draggable="false">
+                <div class="whitey-char__shadow"></div>
             </div>
 
-            <div class="about__container">
+        </section>
 
-                <article class="glass-card about__article">
+        <!-- ══ ABOUT / TRAYECTORIA ════════════════════════════ -->
+        <section id="about" class="about section" aria-label="Sobre mí y trayectoria">
 
-                    <div class="about__image-container">
-                        <img
-                            src="./assets/about/campuslands.png"
-                            alt="Formación académica"
-                            class="about__image">
+            <div class="section-header">
+                <div class="section-label">Sobre mí</div>
+                <h2 class="section-title reveal-up">Trayectoria Académica y Profesional</h2>
+                <p class="section-description reveal-up">
+                    Un desarrollador apasionado por el backend, los sistemas bien estructurados
+                    y el trabajo en equipo bajo metodologías ágiles.
+                </p>
+            </div>
+
+            <!-- Cards de perfil -->
+            <div class="about__grid">
+
+                <article class="glass-card about__card stagger-item">
+                    <div class="about__card-img">
+                        <img src="./assets/about/campuslands.png" alt="Campuslands" loading="lazy">
                     </div>
-
-                    <div class="about__content">
-
-                        <h3>Formación</h3>
-
+                    <div class="about__card-body">
+                        <h3>Formación Técnica</h3>
                         <p>
-                            Actualmente me encuentro formándome en desarrollo de software,
-                            fortaleciendo mis habilidades en backend con Python,
-                            estructuras de datos, programación orientada a objetos
-                            y diseño de aplicaciones web.
+                            Actualmente me formo en Desarrollo de Software en <strong>Campuslands</strong>,
+                            con énfasis en backend, estructuras de datos, POO y diseño de aplicaciones web.
+                            Complementado con el título de <strong>Bachiller Técnico Empresarial Bilingüe</strong>.
                         </p>
-
                     </div>
-
                 </article>
 
-                <article class="glass-card about__article">
-
-                    <div class="about__image-container">
-                        <img
-                            src="./assets/about/scrum.png"
-                            alt="SCRUM"
-                            class="about__image">
+                <article class="glass-card about__card stagger-item">
+                    <div class="about__card-img">
+                        <img src="./assets/about/scrum.png" alt="SCRUM" loading="lazy">
                     </div>
-
-                    <div class="about__content">
-
+                    <div class="about__card-body">
                         <h3>Metodologías Ágiles</h3>
-
                         <p>
-                            Tengo experiencia trabajando bajo metodologías ágiles
-                            SCRUM, colaborando en equipos multidisciplinarios,
-                            gestionando historias de usuario y participando en
-                            procesos iterativos de desarrollo.
+                            Experiencia trabajando bajo <strong>SCRUM</strong> en equipos multidisciplinarios,
+                            gestionando historias de usuario, sprints y participando en procesos iterativos
+                            de desarrollo con feedback continuo.
                         </p>
-
                     </div>
-
                 </article>
 
-                <article class="glass-card about__article">
-
-                    <div class="about__image-container">
-                        <img
-                            src="./assets/about/backend.png"
-                            alt="Backend Development"
-                            class="about__image">
+                <article class="glass-card about__card stagger-item">
+                    <div class="about__card-img">
+                        <img src="./assets/about/backend.png" alt="Backend Development" loading="lazy">
                     </div>
-
-                    <div class="about__content">
-
-                        <h3>Perfil Profesional</h3>
-
+                    <div class="about__card-body">
+                        <h3>Perfil Técnico</h3>
                         <p>
-                            Me caracterizo por el liderazgo proactivo,
-                            adaptabilidad, creatividad y trabajo en equipo.
-                            Creo firmemente que la perseverancia es la clave para
-                            resolver cualquier desafío técnico.
+                            Sólido manejo de patrones de diseño <strong>MVC</strong>, principios
+                            <strong>SOLID</strong>, arquitectura en capas (DAO, lógica, vistas),
+                            manejo de colecciones, excepciones, JDBC y Stream API en Java.
                         </p>
-
                     </div>
+                </article>
 
+                <article class="glass-card about__card stagger-item">
+                    <div class="about__card-img about__card-img--cambridge">
+                        <img src="./assets/about/cambridge.png" alt="Cambridge PET B1" loading="lazy">
+                    </div>
+                    <div class="about__card-body">
+                        <h3>Perfil Bilingüe</h3>
+                        <p>
+                            Certificado con nivel <strong>B1 Cambridge PET</strong> en inglés.
+                            Capacidad de leer documentación técnica en inglés, participar en entornos
+                            de trabajo internacionales y seguir estándares globales de desarrollo.
+                        </p>
+                    </div>
                 </article>
 
             </div>
 
-            <div class="skills-container">
+            <!-- Timeline de educación -->
+            <div class="section-header" style="margin-top: 5rem; margin-bottom: 2rem;">
+                <div class="section-label">Educación</div>
+                <h2 class="section-title reveal-up">Formación Académica</h2>
+            </div>
 
-                <div class="glass-card skill-card">Python</div>
-                <div class="glass-card skill-card">JavaScript</div>
-                <div class="glass-card skill-card">HTML5</div>
-                <div class="glass-card skill-card">CSS3</div>
-                <div class="glass-card skill-card">SCRUM</div>
-                <div class="glass-card skill-card">Git</div>
-                <div class="glass-card skill-card">B1 Cambridge PET</div>
+            <div class="timeline">
 
+                <article class="glass-card timeline__item reveal-left">
+                    <div class="timeline__period">2026 — Presente</div>
+                    <div class="timeline__title">Desarrollo de Software</div>
+                    <div class="timeline__institution">Campuslands · Bucaramanga, Colombia</div>
+                    <p class="timeline__description">
+                        Programa intensivo de formación en desarrollo de software con énfasis en
+                        backend. Cubre Python, Java, MySQL, JDBC, HTML, CSS, JavaScript, Web Components,
+                        SCRUM y buenas prácticas de arquitectura de software.
+                    </p>
+                </article>
+
+                <article class="glass-card timeline__item reveal-left">
+                    <div class="timeline__period">2025</div>
+                    <div class="timeline__title">Bachiller Técnico Empresarial Bilingüe</div>
+                    <div class="timeline__institution">Colegio Nuestra Señora de Chiquinquirá · Bucaramanga</div>
+                    <p class="timeline__description">
+                        Formación técnica con enfoque bilingüe, énfasis en liderazgo, gestión
+                        empresarial y comunicación en inglés. Nivel certificado B1 Cambridge PET.
+                    </p>
+                </article>
+
+            </div>
+
+            <!-- Whitey estático — About -->
+            <div class="whitey-char whitey-char--whitey" aria-hidden="true">
+                <img src="./assets/Whiteys/Whitey.webp"
+                     alt=""
+                     class="whitey-char__img"
+                     draggable="false">
+                <div class="whitey-char__shadow"></div>
             </div>
 
         </section>
 
-        <section id="contact" class="contact section">
+        <!-- ══ SKILLS ════════════════════════════════════════ -->
+        <section id="skills" class="skills section" aria-label="Habilidades técnicas">
 
             <div class="section-header">
+                <div class="section-label">Stack Tecnológico</div>
+                <h2 class="section-title reveal-up">Habilidades Técnicas</h2>
+                <p class="section-description reveal-up">
+                    Tecnologías con las que construyo soluciones backend sólidas y
+                    frontends funcionales.
+                </p>
+            </div>
 
-                <span class="section-subtitle">
-                    Contacto
-                </span>
+            <div class="skills__grid">
 
-                <h2 class="section-title">
-                    Redes y Canales Profesionales
-                </h2>
+                <!-- Backend -->
+                <div class="glass-card skills__category stagger-item">
+                    <div class="skills__category-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="m7 21 5-5 5 5"/></svg>
+                        Backend
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-item__header">
+                            <span class="skill-item__name">Java 17</span>
+                            <span class="skill-item__level">Intermedio</span>
+                        </div>
+                        <div class="skill-item__bar">
+                            <div class="skill-item__fill" style="--skill-width: 72%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-item__header">
+                            <span class="skill-item__name">Python</span>
+                            <span class="skill-item__level">Intermedio</span>
+                        </div>
+                        <div class="skill-item__bar">
+                            <div class="skill-item__fill" style="--skill-width: 68%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-item__header">
+                            <span class="skill-item__name">MySQL / JDBC</span>
+                            <span class="skill-item__level">Intermedio</span>
+                        </div>
+                        <div class="skill-item__bar">
+                            <div class="skill-item__fill" style="--skill-width: 65%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-item__header">
+                            <span class="skill-item__name">Maven</span>
+                            <span class="skill-item__level">Básico–Intermedio</span>
+                        </div>
+                        <div class="skill-item__bar">
+                            <div class="skill-item__fill" style="--skill-width: 55%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="glass-card skills__category stagger-item">
+                    <div class="skills__category-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        Frontend
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-item__header">
+                            <span class="skill-item__name">HTML5 / CSS3</span>
+                            <span class="skill-item__level">Sólido</span>
+                        </div>
+                        <div class="skill-item__bar">
+                            <div class="skill-item__fill" style="--skill-width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-item__header">
+                            <span class="skill-item__name">JavaScript ES6+</span>
+                            <span class="skill-item__level">Intermedio</span>
+                        </div>
+                        <div class="skill-item__bar">
+                            <div class="skill-item__fill" style="--skill-width: 70%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-item__header">
+                            <span class="skill-item__name">Web Components</span>
+                            <span class="skill-item__level">Básico–Intermedio</span>
+                        </div>
+                        <div class="skill-item__bar">
+                            <div class="skill-item__fill" style="--skill-width: 58%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-item__header">
+                            <span class="skill-item__name">Diseño Responsive</span>
+                            <span class="skill-item__level">Sólido</span>
+                        </div>
+                        <div class="skill-item__bar">
+                            <div class="skill-item__fill" style="--skill-width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Herramientas y metodologías -->
+                <div class="glass-card skills__category stagger-item">
+                    <div class="skills__category-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        Herramientas
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-item__header">
+                            <span class="skill-item__name">Git / GitHub</span>
+                            <span class="skill-item__level">Intermedio</span>
+                        </div>
+                        <div class="skill-item__bar">
+                            <div class="skill-item__fill" style="--skill-width: 72%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-item__header">
+                            <span class="skill-item__name">SCRUM / Agile</span>
+                            <span class="skill-item__level">Sólido</span>
+                        </div>
+                        <div class="skill-item__bar">
+                            <div class="skill-item__fill" style="--skill-width: 78%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-item__header">
+                            <span class="skill-item__name">MVC / SOLID</span>
+                            <span class="skill-item__level">Intermedio</span>
+                        </div>
+                        <div class="skill-item__bar">
+                            <div class="skill-item__fill" style="--skill-width: 68%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-item__header">
+                            <span class="skill-item__name">Inglés (B1 Cambridge)</span>
+                            <span class="skill-item__level">Certificado</span>
+                        </div>
+                        <div class="skill-item__bar">
+                            <div class="skill-item__fill" style="--skill-width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
-            <div class="contact-grid">
+            <!-- Tags visuales -->
+            <div class="skills__tags" aria-label="Tecnologías adicionales">
+                <span class="skill-tag">Java 17</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">JDBC</span>
+                <span class="skill-tag">Maven</span>
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Web Components</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">SCRUM</span>
+                <span class="skill-tag">MVC</span>
+                <span class="skill-tag">SOLID</span>
+                <span class="skill-tag">Stream API</span>
+                <span class="skill-tag">POO</span>
+                <span class="skill-tag">B1 Cambridge</span>
+            </div>
 
-                <article class="glass-card contact-card">
-                    <h3>Instagram</h3>
-                    <p>Mira mis publicaciones más recientes.</p>
-                        <a href="https://www.instagram.com/juansetoscano/" target="_blank">
-                            Ver perfil
-                        </a>
-                </article>
+            <!-- Estadísticas animadas -->
+            <div class="stats-grid" aria-label="Estadísticas de desarrollo">
 
-                <article
-                    class="glass-card github-card"
-                    id="githubMainCard">
+                <div class="glass-card stat-card reveal-fade">
+                    <div class="counter" data-target="5">0</div>
+                    <div class="stat-label">Proyectos</div>
+                </div>
 
-                    <div class="github-card__content">
+                <div class="glass-card stat-card reveal-fade">
+                    <div class="counter" data-target="3">0</div>
+                    <div class="stat-label">Lenguajes</div>
+                </div>
 
-                        <h3>GitHub</h3>
+                <div class="glass-card stat-card reveal-fade">
+                    <div class="stat-number-static">1+</div>
+                    <div class="stat-label">Años de formación</div>
+                </div>
 
-                        <p>
-                            Centro principal de mis proyectos,
-                            repositorios y contribuciones.
-                        </p>
+                <div class="glass-card stat-card reveal-fade">
+                    <div class="counter" data-target="100">0</div>
+                    <div class="stat-label">% Compromiso</div>
+                </div>
 
-                            <a id="githubEventButton" href="https://github.com/Resbaloso" target="_blank">Explorar Repositorios</a>
+            </div>
 
-                    </div>
-
-                </article>
-
-                <article class="glass-card contact-card">
-                    <h3>Correo</h3>
-                    <p>Contacto directo.</p>
-                        <a href="mailto:juansetoscano@gmail.com">
-                            Enviar Email
-                        </a>
-                </article>
-
+            <!-- Blue estático — Skills -->
+            <div class="whitey-char whitey-char--blue" aria-hidden="true">
+                <img src="./assets/Whiteys/Blue.webp"
+                     alt=""
+                     class="whitey-char__img"
+                     draggable="false">
+                <div class="whitey-char__shadow"></div>
             </div>
 
         </section>
 
-        <section id="projects" class="projects section">
+        <!-- ══ PROJECTS ══════════════════════════════════════ -->
+        <section id="projects" class="projects section" aria-label="Proyectos destacados">
 
             <div class="section-header">
-
-                <span class="section-subtitle">
-                    Portafolio
-                </span>
-
-                <h2 class="section-title">
-                    Proyectos Destacados
-                </h2>
-
+                <div class="section-label">Portafolio</div>
+                <h2 class="section-title reveal-up">Proyectos Destacados</h2>
+                <p class="section-description reveal-up">
+                    Sistemas construidos con arquitecturas limpias y tecnologías reales.
+                </p>
             </div>
 
+            <div class="projects-filters" role="group" aria-label="Filtros de tecnología">
 
-            <div class="projects-filters">
-
-                <button
-                    class="filter-button active"
-                    data-filter="all">
+                <button class="filter-button active" data-filter="all">
                     Todos
                 </button>
-
-                <button
-                    class="filter-button"
-                    data-filter="python">
+                <button class="filter-button" data-filter="java">
+                    Java
+                </button>
+                <button class="filter-button" data-filter="python">
                     Python
                 </button>
-
-                <button
-                    class="filter-button"
-                    data-filter="javascript">
+                <button class="filter-button" data-filter="javascript">
                     JavaScript
                 </button>
-
-                <button
-                    class="filter-button"
-                    data-filter="frontend">
-                    HTML/CSS
+                <button class="filter-button" data-filter="frontend">
+                    HTML / CSS
                 </button>
 
             </div>
 
-            <div class="projects-carousel">
+            <div class="projects-carousel" role="region" aria-label="Carrusel de proyectos" aria-live="polite">
 
                 <div class="carousel-wrapper">
 
-                    <div
-                        id="projectsContainer"
-                        class="carousel-track">
+                    <div id="projectsContainer" class="carousel-track">
+                        <!-- Proyectos renderizados por JS -->
                     </div>
 
                 </div>
+
+            </div>
+
+            <!-- Purple estático — Projects -->
+            <div class="whitey-char whitey-char--purple" aria-hidden="true">
+                <img src="./assets/Whiteys/Purple.webp"
+                     alt=""
+                     class="whitey-char__img"
+                     draggable="false">
+                <div class="whitey-char__shadow"></div>
+            </div>
+
+        </section>
+
+        <!-- ══ CONTACT ════════════════════════════════════════ -->
+        <section id="contact" class="contact section" aria-label="Información de contacto">
+
+            <div class="section-header">
+                <div class="section-label">Contacto</div>
+                <h2 class="section-title reveal-up">Hablemos</h2>
+                <p class="section-description reveal-up">
+                    ¿Tienes un proyecto en mente o quieres conocer más sobre mi trabajo?
+                    Estoy disponible para nuevas oportunidades.
+                </p>
+            </div>
+
+            <div class="contact__layout">
+
+                <!-- Info y links directos -->
+                <div class="contact__info reveal-left">
+
+                    <h3 class="contact__info-title">
+                        Siempre dispuesto a<br>
+                        <span style="color: #4da3ff">colaborar y crecer.</span>
+                    </h3>
+
+                    <p class="contact__info-text">
+                        Soy Juan Sebastián Toscano Duarte, Junior Backend Developer
+                        con base en Bucaramanga, Colombia. Me interesa trabajar en
+                        equipos que valoren la calidad del código y el aprendizaje continuo.
+                    </p>
+
+                    <nav class="contact__links" aria-label="Redes y canales de contacto">
+
+                        <a href="mailto:juansetoscano@gmail.com"
+                           class="contact__link-item glass-card"
+                           aria-label="Enviar email">
+                            <div class="contact__link-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div class="contact__link-text">
+                                <span class="contact__link-label">Email</span>
+                                <span class="contact__link-value">juansetoscano@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/Resbaloso"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="contact__link-item glass-card"
+                           aria-label="Ver perfil de GitHub">
+                            <div class="contact__link-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                </svg>
+                            </div>
+                            <div class="contact__link-text">
+                                <span class="contact__link-label">GitHub</span>
+                                <span class="contact__link-value">github.com/Resbaloso</span>
+                            </div>
+                        </a>
+
+                        <a href="https://www.instagram.com/juansetoscano/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="contact__link-item glass-card"
+                           aria-label="Ver perfil de Instagram">
+                            <div class="contact__link-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                                </svg>
+                            </div>
+                            <div class="contact__link-text">
+                                <span class="contact__link-label">Instagram</span>
+                                <span class="contact__link-value">@juansetoscano</span>
+                            </div>
+                        </a>
+
+                    </nav>
+
+                </div>
+
+                <!-- GitHub card -->
+                <article class="glass-card github-card reveal-right" id="githubMainCard">
+
+                    <div class="github-card__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                    </div>
+
+                    <h3>GitHub</h3>
+
+                    <p>
+                        Centro principal de mis repositorios, proyectos y contribuciones.
+                        Código limpio, commits descriptivos y arquitecturas bien pensadas.
+                    </p>
+
+                    <a id="githubEventButton"
+                       href="https://github.com/Resbaloso"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                        Explorar Repositorios
+                    </a>
+
+                </article>
 
             </div>
 
@@ -338,41 +693,28 @@
 
     </main>
 
-    <footer class="footer">
-
+    <!-- ── FOOTER ─────────────────────────────────────────── -->
+    <footer class="footer" role="contentinfo">
         <div class="footer__container">
 
             <div class="footer__brand">
-
-                <h3>
-                    Juan Sebastian Toscano Duarte
-                </h3>
-
-                <p>
-                    Junior Backend Developer
-                </p>
-
+                <h3>Juan Sebastian Toscano Duarte</h3>
+                <p>Junior Backend Developer · Campuslands 2026</p>
             </div>
 
-            <div class="footer__links">
-
+            <nav class="footer__links" aria-label="Links rápidos del footer">
                 <a href="#hero">Inicio</a>
-                <a href="#about">Sobre mí</a>
+                <a href="#about">Trayectoria</a>
+                <a href="#skills">Habilidades</a>
                 <a href="#projects">Proyectos</a>
                 <a href="#contact">Contacto</a>
-
-            </div>
+            </nav>
 
             <div class="footer__copyright">
-
-                <p>
-                    © Resbaloso Dev 2026 Todos los derechos reservados.
-                </p>
-
+                <p>© Resbaloso Dev 2026 · Todos los derechos reservados.</p>
             </div>
 
         </div>
-
     </footer>
 
     <script type="module" src="./js/app.js"></script>

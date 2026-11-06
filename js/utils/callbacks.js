@@ -1,14 +1,10 @@
 "use strict";
 
-import { projectsData }
-from "../data/projects.data.js";
+import { projectsData } from "../data/projects.data.js";
 
-export const loadProjects = callback => {
-
+// Simula una carga asíncrona de proyectos (como si fuera un fetch)
+export function cargarProyectos(callback) {
     setTimeout(() => {
-
         callback(projectsData);
-
     }, 1000);
-
-};
+}

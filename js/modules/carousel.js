@@ -1,123 +1,81 @@
 "use strict";
 
+// ===== CARRUSEL DE PROYECTOS =====
+// Mueve las tarjetas automáticamente y lo pausa al hacer hover
+
 let animationId;
-let position = 0;
-let speed = 0.35;
+let posicion = 0;
+const velocidad = 0.4;
 
 let track;
 let wrapper;
 
-export const renderProjects = projects => {
+export function renderizarProyectos(proyectos) {
 
-    track =
-        document.getElementById(
-            "projectsContainer"
-        );
+    track = document.getElementById("projectsContainer");
+    if (!track) return;
 
     track.innerHTML = "";
 
-    projects.forEach(project => {
-
-        track.appendChild(
-            createProjectCard(project)
-        );
-
+    // Lo duplico para crear el efecto de loop infinito
+    [...proyectos, ...proyectos].forEach(proyecto => {
+        track.appendChild(crearTarjetaProyecto(proyecto));
     });
+}
 
-    projects.forEach(project => {
+function crearTarjetaProyecto(proyecto) {
 
-        track.appendChild(
-            createProjectCard(project)
-        );
+    const card = document.createElement("project-card");
 
-    });
+    card.setAttribute("title", proyecto.title);
+    card.setAttribute("description", proyecto.description);
+    card.setAttribute("github", proyecto.github);
+    card.setAttribute("stack", JSON.stringify(proyecto.stack));
 
-};
-
-function createProjectCard(project){
-
-    const card =
-        document.createElement(
-            "project-card"
-        );
-
-    card.setAttribute(
-        "title",
-        project.title
-    );
-
-    card.setAttribute(
-        "description",
-        project.description
-    );
-
-    card.setAttribute(
-        "github",
-        project.github
-    );
-
-    card.setAttribute(
-        "stack",
-        JSON.stringify(
-            project.stack
-        )
-    );
+    if (proyecto.featured) {
+        card.setAttribute("featured", "true");
+    }
 
     return card;
 }
 
-function animate(){
+function animar() {
 
-    position += speed;
+    posicion += velocidad;
 
-    const loopPoint =
-        track.scrollWidth / 2;
-
-    if(position >= loopPoint){
-
-        position = 0;
+    // Cuando llega a la mitad, reinicio la posición para que el loop sea invisible
+    const puntoLoop = track.scrollWidth / 2;
+    if (posicion >= puntoLoop) {
+        posicion = 0;
     }
 
-    track.style.transform =
-        `translateX(-${position}px)`;
-
-    animationId =
-        requestAnimationFrame(
-            animate
-        );
+    track.style.transform = `translateX(-${posicion}px)`;
+    animationId = requestAnimationFrame(animar);
 }
 
-export const initializeCarousel = () => {
+export function inicializarCarrusel() {
 
-    wrapper =
-        document.querySelector(
-            ".carousel-wrapper"
-        );
+    wrapper = document.querySelector(".carousel-wrapper");
+    if (!wrapper) return;
 
-    cancelAnimationFrame(
-        animationId
-    );
+    cancelAnimationFrame(animationId);
+    animar();
 
-    animate();
+    // Pauso cuando el mouse está encima
+    wrapper.addEventListener("mouseenter", () => cancelAnimationFrame(animationId));
+    wrapper.addEventListener("mouseleave", () => animar());
 
-    wrapper.addEventListener(
-        "mouseenter",
-        () => {
+    // Soporte táctil para celular
+    let touchStartX = 0;
 
-            cancelAnimationFrame(
-                animationId
-            );
+    wrapper.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+        cancelAnimationFrame(animationId);
+    }, { passive: true });
 
-        }
-    );
-
-    wrapper.addEventListener(
-        "mouseleave",
-        () => {
-
-            animate();
-
-        }
-    );
-
-};
+    wrapper.addEventListener("touchend", (e) => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 10) posicion += diff;
+        animar();
+    }, { passive: true });
+}

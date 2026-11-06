@@ -1,56 +1,28 @@
 "use strict";
 
-export const initializeFilters = (
-    projects,
-    renderFunction
-) => {
+// ===== FILTROS DE PROYECTOS =====
+// Filtra las tarjetas del carrusel según la tecnología seleccionada
 
-    const buttons =
-        document.querySelectorAll(
-            ".filter-button"
-        );
+export function inicializarFiltros(proyectos, funcionRender) {
 
-    buttons.forEach(button => {
+    const botones = document.querySelectorAll(".filter-button");
 
-        button.addEventListener(
-            "click",
-            () => {
+    botones.forEach(boton => {
+        boton.addEventListener("click", () => {
 
-                buttons.forEach(btn =>
-                    btn.classList.remove(
-                        "active"
-                    )
-                );
+            // Quito el activo de todos y se lo pongo al que clickearon
+            botones.forEach(btn => btn.classList.remove("active"));
+            boton.classList.add("active");
 
-                button.classList.add(
-                    "active"
-                );
+            const filtro = boton.dataset.filter;
 
-                const filter =
-                    button.dataset.filter;
-
-                if (filter === "all") {
-
-                    renderFunction(
-                        projects
-                    );
-
-                    return;
-                }
-
-                const filteredProjects =
-                    projects.filter(
-                        project =>
-                            project.tech === filter
-                    );
-
-                renderFunction(
-                    filteredProjects
-                );
-
+            if (filtro === "all") {
+                funcionRender(proyectos);
+                return;
             }
-        );
 
+            const proyectosFiltrados = proyectos.filter(p => p.tech === filtro);
+            funcionRender(proyectosFiltrados);
+        });
     });
-
-};
+}

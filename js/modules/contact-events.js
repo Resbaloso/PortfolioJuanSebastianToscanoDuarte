@@ -1,29 +1,15 @@
 "use strict";
 
-export const initializeContactEvents = () => {
+// ===== EVENTOS DE CONTACTO =====
+// El botón de GitHub dispara un evento personalizado que activa el efecto de fondo
 
-    const githubButton =
-        document.getElementById(
-            "githubEventButton"
-        );
+export function inicializarEventosContacto() {
 
-    githubButton.addEventListener(
-        "click",
-        () => {
+    const botonGithub = document.getElementById("githubEventButton");
 
-            document.dispatchEvent(
-
-                new CustomEvent(
-                    "github-selected",
-                    {
-                        detail: {
-                            source: "github-card"
-                        }
-                    }
-                )
-            );
-
-        }
-    );
-
-};
+    botonGithub.addEventListener("click", () => {
+        document.dispatchEvent(new CustomEvent("github-selected", {
+            detail: { source: "github-card" }
+        }));
+    });
+}
