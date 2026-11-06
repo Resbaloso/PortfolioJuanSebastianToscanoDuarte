@@ -266,6 +266,9 @@ img {
     height: 40px;
     z-index: 999;
     gap: 5px;
+    background: transparent;
+    border: none;
+    padding: 0;
 }
 
 .bar {
